@@ -43,7 +43,7 @@ def loops_1a():
     for i in range(10):
         star_list.append("*")
 
-        return star_list
+    return star_list
 
 
 def star_map():
