@@ -53,8 +53,16 @@ def star_map():
     one star in it if the index is odd and exactly one exclamation mark
     if it's even. Reuse the is odd function that you've already written.
     E.g.: ["!", "*", "!", "*", "!", "*", "!", "*", "!", "*"]
+
     """
-    pass
+    def star_or_bang(a_number):
+        if is_odd(a_number):
+            return "*"
+        else:
+            return "!"
+
+    result = map(star_or_bang, range(10))
+    return result
 
 
 def loops_1c(number_of_items=5, symbol="#"):
