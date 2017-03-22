@@ -132,10 +132,9 @@ def loops_3():
     for i in range(10):
         number_row = []
         for j in range(10):
-            number_row.append(i)
+            number_row.append(str(i))
         number_square.append(number_row)
 
-    print(number_square)
     return number_square
 
 
@@ -154,7 +153,14 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    pass
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range(10):
+            number_row.append(str(j))
+        number_square.append(number_row)
+
+    return number_square
 
 
 def loops_5():
@@ -179,7 +185,14 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    pass
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append('(i{}, j{})'.format(i, j))
+        number_square.append(coordinates_row)
+
+    return number_square
 
 
 def loops_6():
@@ -202,7 +215,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    pass
+    wedge = []
+
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(str(j))
+        wedge.append(row)
+    return wedge
 
 
 def loops_7():
@@ -226,7 +246,7 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    pass
+
 
 
 def lp(some_kind_of_list, exercise_name):
