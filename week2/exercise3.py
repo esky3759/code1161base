@@ -1,5 +1,4 @@
-# -*- coding: UTF-8 -*-
-"""Modify each function until the tests pass."""
+"""Modify each function until the tests pass.""" # noqa
 from __future__ import division
 from __future__ import print_function
 
@@ -19,7 +18,7 @@ def fix_it(moves=True, should_move=True):
     Use conditional statements: if, else, elif etc.
     This function should return either:
     "WD-40"
-    "Duct Tape"
+    "Duct Tape"g
     "No Problem"
     """
     if moves and should_move:
@@ -54,7 +53,7 @@ def star_map():
     if it's even. Reuse the is odd function that you've already written.
     E.g.: ["!", "*", "!", "*", "!", "*", "!", "*", "!", "*"]
 
-    """
+        """
     def star_or_bang(a_number):
         if is_odd(a_number):
             return "*"
@@ -82,7 +81,6 @@ def loops_1c(number_of_items=5, symbol="#"):
 
 def loops_2():
     """Make a big square starfield.
-
     return a list of 10 items, each one a list of 10 items,
     each one of those, a string with exacly one star in it.
     E.g.: [
@@ -98,7 +96,11 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    pass
+    star_square = []
+    for j in range(10):
+        star_square.append((loops_1c(number_of_items=10, symbol="*")))
+
+    return star_square
 
 
 def loops_3():
