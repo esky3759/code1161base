@@ -1,5 +1,4 @@
-# -*- coding: UTF-8 -*-
-"""Modify each function until the tests pass."""
+"""Modify each function until the tests pass.""" # noqa
 from __future__ import division
 from __future__ import print_function
 
@@ -19,7 +18,7 @@ def fix_it(moves=True, should_move=True):
     Use conditional statements: if, else, elif etc.
     This function should return either:
     "WD-40"
-    "Duct Tape"
+    "Duct Tape"g
     "No Problem"
     """
     if moves and should_move:
@@ -39,7 +38,11 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    pass
+    star_list = []
+    for i in range(10):
+        star_list.append("*")
+
+    return star_list
 
 
 def star_map():
@@ -49,8 +52,16 @@ def star_map():
     one star in it if the index is odd and exactly one exclamation mark
     if it's even. Reuse the is odd function that you've already written.
     E.g.: ["!", "*", "!", "*", "!", "*", "!", "*", "!", "*"]
-    """
-    pass
+
+        """
+    def star_or_bang(a_number):
+        if is_odd(a_number):
+            return "*"
+        else:
+            return "!"
+
+    result = map(star_or_bang, range(10))
+    return result
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -61,12 +72,15 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    pass
+
+    my_list = []
+    for i in range(number_of_items):
+        my_list.append(symbol)
+    return my_list
 
 
 def loops_2():
     """Make a big square starfield.
-
     return a list of 10 items, each one a list of 10 items,
     each one of those, a string with exacly one star in it.
     E.g.: [
@@ -82,7 +96,11 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    pass
+    star_square = []
+    for j in range(10):
+        star_square.append((loops_1c(number_of_items=10, symbol="*")))
+
+    return star_square
 
 
 def loops_3():
@@ -106,7 +124,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    pass
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range(10):
+            number_row.append(i)
+        number_square.append(number_row)
+
+        return number_square
 
 
 def loops_4():
@@ -124,7 +149,11 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    pass
+    number_square = []
+    for i in range(10):
+        number_square.append(range(10))
+
+    return number_square
 
 
 def loops_5():
@@ -149,7 +178,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    pass
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append('(i{}, j{})'.format(i, j))
+        number_square.append(coordinates_row)
+    print(number_square)
 
 
 def loops_6():
@@ -172,7 +207,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    pass
+    the_wedge = []
+
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(j)
+        the_wedge.append(row)
+    return the_wedge
 
 
 def loops_7():
