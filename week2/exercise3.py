@@ -124,7 +124,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    pass
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range(10):
+            number_row.append(i)
+        number_square.append(number_row)
+
+        return number_square
 
 
 def loops_4():
@@ -142,7 +149,11 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    pass
+    number_square = []
+    for i in range(10):
+        number_square.append(range(10))
+
+    return number_square
 
 
 def loops_5():
@@ -167,7 +178,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    pass
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append('(i{}, j{})'.format(i, j))
+        number_square.append(coordinates_row)
+    print(number_square)
 
 
 def loops_6():
@@ -190,7 +207,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    pass
+    the_wedge = []
+
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(j)
+        the_wedge.append(row)
+    return the_wedge
 
 
 def loops_7():
