@@ -128,10 +128,11 @@ def loops_3():
     for i in range(10):
         number_row = []
         for j in range(10):
-            number_row.append(i)
+            number_row.append(str(i))
         number_square.append(number_row)
 
-        return number_square
+    print(number_square)
+    return number_square
 
 
 def loops_4():
@@ -151,8 +152,12 @@ def loops_4():
     """
     number_square = []
     for i in range(10):
-        number_square.append(range(10))
+        number_row = []
+        for j in range(10):
+            number_row.append(str(j))
+        number_square.append(number_row)
 
+    print(number_square)
     return number_square
 
 
@@ -184,7 +189,7 @@ def loops_5():
         for j in range(5):
             coordinates_row.append('(i{}, j{})'.format(i, j))
         number_square.append(coordinates_row)
-    print(number_square)
+    return(number_square)
 
 
 def loops_6():
@@ -212,7 +217,7 @@ def loops_6():
     for i in range(10):
         row = []
         for j in range(i + 1):
-            row.append(j)
+            row.append(str(j))
         the_wedge.append(row)
     return the_wedge
 
@@ -287,7 +292,7 @@ if __name__ == "__main__":
     print(fix_it(False, False), "fix_it")
     lp(loops_1a(), "loops_1a")
     lp(star_map(), "star_map")
-    lp(loops_1c(4, "×°×"), "loops_1c")
+    lp(loops_1c(4, "muppet"), "loops_1c")
     lp(loops_2(), "loops_2")
     lp(loops_3(), "loops_3")
     lp(loops_4(), "loops_4")

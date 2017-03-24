@@ -92,7 +92,7 @@ def not_number_rejector(message):
     while True:
         try:
             input_number = int(raw_input(message))
-            print("Thanks {} looks good.".format(input_number))
+            print("Thanks {} looks good".format(input_number))
             return input_number
         except Exception as e:
             print("err, you wot, try again ({})".format(e))
@@ -104,7 +104,7 @@ def super_asker(low, high):
     Combine stubborn_asker and not_number_rejector to make a function
     that does it all!
     """
-    message = ("Type a number between {} and {}:".format(low, high))
+    message = ("Type a number between {} and {}".format(low, high))
 
     while True:
         while True:
