@@ -107,17 +107,16 @@ def super_asker(low, high):
     message = ("Type a number between {} and {}".format(low, high))
 
     while True:
-        while True:
-            try:
-                input_number = int(raw_input(message))
-                print("{} is a number".format(input_number))
-                if low < input_number < high:
-                    print("{} is valid".format(input_number))
-                    return(input_number)
-                else:
-                    print("{} is not valid".format(input_number))
-            except Exception as e:
-                    print("Try again ({})".format(e))
+        try:
+            input_number = int(raw_input(message))
+            print("{} is a number".format(input_number))
+            if low < input_number < high:
+                print("{} is valid".format(input_number))
+                return(input_number)
+            else:
+                print("{} is not valid".format(input_number))
+        except Exception as e:
+                print("Try again ({})".format(e))
 
 
 if __name__ == "__main__":
