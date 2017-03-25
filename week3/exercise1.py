@@ -43,7 +43,18 @@ def gene_krupa_range(start, stop, even_step, odd_step):
     make a list that instead of having evenly spaced steps
     has odd steps be one size and even steps be another.
     """
-    return range(start, stop, even_step, odd_step)
+    gkr = []
+    n = 0
+    while start <= stop:
+        if n % 2 != 0:
+            gkr.append(start)
+            start += odd_step
+            n += 1
+        else:
+            gkr.append(start)
+            start += even_step
+            n += 1
+    return gkr
 
 
 def stubborn_asker(low, high):
@@ -52,15 +63,15 @@ def stubborn_asker(low, high):
     Ask for a number, and if the response is outside the bounds keep asking
     until you get a number that you think is OK
     """
-    message = "between {low}, and {high}: ".format(low=low, high=high)
-
+    message = "input num between {low} & {high}: ".format(low=low, high=high)
     while True:
-        in_num = int(raw_input(message))
-        if low < in_num < high:
-            print("Thanks bro good {}".format(in_num))
-            return input_number
+        num = int(raw_input(message))
+        if low < num < high:
+            print ("good {}".format(num))
+            return num
         else:
-            print("{input} not in {low}, and {high}".format(in_num, low, high))
+            print ("try again")
+
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -69,6 +80,16 @@ def not_number_rejector(message):
     "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
+    message = "give my boi a number : "
+
+    while True:
+        try:
+            num = int(raw_input(message))
+            if int(num):
+                print ("thank bb, i can count to {}".format(num))
+                return num
+        except Exception as e:
+            print ("aint no time for {}".format(e))
     pass
 
 
@@ -78,7 +99,18 @@ def super_asker(low, high):
     Combine stubborn_asker and not_number_rejector to make a function
     that does it all!
     """
-    pass
+    message = "ok bb lets do this, give me a num between {} & {}".format(low,
+                                                                         high)
+    while True:
+        try:
+            num = int(raw_input(message))
+            if int(num) and low < num < high:
+                print ("wow rice nice baby")
+                return num
+            else:
+                print ("ben will ask 1 more time")
+        except Exception as e:
+            print ("do it again, ben doesnt like {}".format(e))
 
 
 if __name__ == "__main__":
@@ -97,6 +129,6 @@ if __name__ == "__main__":
     print("\nstubborn_asker")
     stubborn_asker(30, 45)
     print("\nnot_number_rejector")
-    not_number_rejector()
+    not_number_rejector("give ma boi your numb")
     print("\nsuper_asker")
     super_asker(33, 42)
