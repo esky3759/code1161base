@@ -29,41 +29,50 @@ def advancedGuessingGame():
     """
 
     print ("Welcome")
-    in_game = False
-    while not in_game:
+    while True:
         try:
             l_input = raw_input("please provide a lower: ")
             l_num = int(l_input)
-            h_input = raw_input("a higher number too: ")
-            h_num = int(h_input)
-
-            print ("Nice, {} & {}".format(l_num, h_num))
-
-            actualNumber = random.randint(l_num, h_num)
-            guessed = False
-            while not guessed:
-                try:
-                    g_input = raw_input("a number between {} & {}: ".format(
-                        l_num, h_num))
-                    g_num = int(g_input)
-                    while g_num not in list(range(l_num, h_num)):
-                        print ("that's out of range!")
-                        g_input = raw_input("a number between {} & {}: "
-                                            .format(l_num, h_num))
-                        g_num = int(g_input)
-                    if g_num == actualNumber:
-                        print ("spot on!")
-                        guessed = True
-                        return "You got it!"
-                    elif g_num < actualNumber:
-                        print ("too small! try again")
-                    else:
-                        print ("too big, try again!")
-                except (Exception, ValueError):
+        except ValueError:
+            print ("try again with an integer.")
+            continue
+        while True:
+            try:
+                h_input = raw_input("A higher number than {} please: "
+                                    .format(l_num))
+                h_num = int(h_input)
+                if h_num > l_num:
+                    print ("You picked {} and {}".format(l_num, h_num))
+                    break
+                else:
                     continue
-        except (Exception, ValueError):
-            print ("try again")
-            pass
+            except ValueError:
+                print ("not an integer, pick a number higher than {}"
+                       .format(l_num))
+                continue
+
+        actualNumber = random.randint(l_num, h_num)
+        guessed = False
+
+        while not guessed:
+            try:
+                guessedNumber = raw_input("pick a number between {} and {}: "
+                                          .format(l_num, h_num))
+                guessedNumber = int(guessedNumber)
+                if guessedNumber == actualNumber:
+                    print ("spot on!")
+                    guessed = True
+                elif guessedNumber not in range(l_num, h_num):
+                    print ("not in range, try again")
+                elif guessedNumber < actualNumber:
+                    print ("try higher!")
+                else:
+                    print ("try lower!")
+            except ValueError:
+                print ("pick an integer between {} and {}: ".format(l_num,
+                                                                    h_num))
+                continue
+        return "You got it!"
 
 
 if __name__ == "__main__":
