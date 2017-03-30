@@ -27,7 +27,19 @@ def binary_search(low, high, actual_number):
       (You should remove them from the file, not comment them out, the
       tests aren't that smart yet.)
     """
-    pass
+
+
+while True:
+    if low > high:
+        return -1
+    mid = (low + high) / 2
+    if mid == actual_number:
+        return mid
+    if mid > actual_number:
+        high = mid - 1
+    else:
+        low = mid + 1
+    return binary_search(low, high, actual_number)
 
 
 if __name__ == "__main__":
