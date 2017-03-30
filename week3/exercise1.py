@@ -84,7 +84,7 @@ def not_number_rejector(message):
 
     while True:
         try:
-            num = int(raw_input(message))
+            num = int(str(raw_input(message)))
             if int(num):
                 print ("thank bb, i can count to {}".format(num))
                 return num
@@ -103,7 +103,7 @@ def super_asker(low, high):
                                                                          high)
     while True:
         try:
-            num = int(raw_input(message))
+            num = int(str(raw_input(message)))
             if int(num) and low < num < high:
                 print ("wow rice nice baby")
                 return num

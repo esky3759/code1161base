@@ -1,11 +1,10 @@
 """Week 3, Exercise 3.
-
 Steps on the way to making your own guessing game.
 """
 from __future__ import division
 from __future__ import print_function
-from exercise1 import not_number_rejector
-from exercise1 import super_asker
+# from exercise1 import not_number_rejector
+# from exercise1 import super_asker
 import random
 
 
@@ -28,7 +27,43 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-    pass
+
+    print ("Welcome")
+    in_game = False
+    while not in_game:
+        try:
+            l_input = raw_input("please provide a lower: ")
+            l_num = int(l_input)
+            h_input = raw_input("a higher number too: ")
+            h_num = int(h_input)
+
+            print ("Nice, {} & {}".format(l_num, h_num))
+
+            actualNumber = random.randint(l_num, h_num)
+            guessed = False
+            while not guessed:
+                try:
+                    g_input = raw_input("a number between {} & {}: ".format(
+                        l_num, h_num))
+                    g_num = int(g_input)
+                    while g_num not in list(range(l_num, h_num)):
+                        print ("that's out of range!")
+                        g_input = raw_input("a number between {} & {}: "
+                                            .format(l_num, h_num))
+                        g_num = int(g_input)
+                    if g_num == actualNumber:
+                        print ("spot on!")
+                        guessed = True
+                        return "You got it!"
+                    elif g_num < actualNumber:
+                        print ("too small! try again")
+                    else:
+                        print ("too big, try again!")
+                except (Exception, ValueError):
+                    continue
+        except (Exception, ValueError):
+            print ("try again")
+            pass
 
 
 if __name__ == "__main__":
