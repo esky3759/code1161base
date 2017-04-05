@@ -2,8 +2,6 @@
 """Week 3, Exercise 4."""
 from __future__ import division
 from __future__ import print_function
-import math
-# import time
 
 
 def binary_search(low, high, actual_number):
@@ -28,18 +26,28 @@ def binary_search(low, high, actual_number):
       tests aren't that smart yet.)
     """
 
-
-while True:
-    if low > high:
-        return -1
-    mid = (low + high) / 2
-    if mid == actual_number:
-        return mid
-    if mid > actual_number:
-        high = mid - 1
-    else:
-        low = mid + 1
-    return binary_search(low, high, actual_number)
+    my_list = range(low, high + 1)
+    hi = len(my_list)
+    lo = 0
+    found = False
+    tries = 0
+    guesses = []
+    while lo <= hi and not found:
+        mid = int(lo + hi) // 2
+        if my_list[mid] == actual_number:
+            tries += 1
+            guesses.append(my_list[mid])
+            found = True
+            return {"guesses": guesses, "tries": tries}
+        else:
+            if my_list[mid] > actual_number:
+                hi = mid - 1
+                guesses.append(my_list[mid])
+                tries += 1
+            else:
+                lo = mid + 1
+                tries += 1
+                guesses.append(my_list[mid])
 
 
 if __name__ == "__main__":
