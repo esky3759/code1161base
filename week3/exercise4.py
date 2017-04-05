@@ -26,28 +26,55 @@ def binary_search(low, high, actual_number):
       tests aren't that smart yet.)
     """
 
-    my_list = range(low, high + 1)
+    """my_list = range(low, high)
     hi = len(my_list)
     lo = 0
     found = False
     tries = 0
     guesses = []
-    while lo <= hi and not found:
-        mid = int(lo + hi) // 2
+    while not found:
+        mid = int((hi + lo) // 2)
+        print (mid, my_list[mid])
+        guesses.append(my_list[mid])
         if my_list[mid] == actual_number:
             tries += 1
-            guesses.append(my_list[mid])
             found = True
-            return {"guesses": guesses, "tries": tries}
+        elif hi == actual_number == lo:
+            tries += 1
+            found = True
+        elif my_list[mid] > actual_number:
+            hi = mid - 1
+            tries += 1
         else:
-            if my_list[mid] > actual_number:
-                hi = mid - 1
-                guesses.append(my_list[mid])
+            lo = mid
+            tries += 1
+    return {"guesses": guesses, "tries": tries}"""
+
+    a = range(low, high)
+    lo = 0
+    hi = len(a) - 1
+    guesses = []
+    tries = 0
+    found = False
+    while not found:
+        if a[lo] == actual_number or a[hi] == actual_number:
+            guesses.append(actual_number)
+            tries += 1
+            found = True
+            return {"guess": guesses, "tries": tries}
+        else:
+            mid = (lo + hi) // 2
+            guesses.append(a[mid])
+            if a[mid] == actual_number:
                 tries += 1
-            else:
+                found = True
+                return {"guess": guesses, "tries": tries}
+            elif a[mid] < actual_number:
                 lo = mid + 1
                 tries += 1
-                guesses.append(my_list[mid])
+            else:
+                hi = mid
+                tries += 1
 
 
 if __name__ == "__main__":
