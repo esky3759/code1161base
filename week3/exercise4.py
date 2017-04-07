@@ -1,3 +1,4 @@
+
 # -*- coding: UTF-8 -*-
 """Week 3, Exercise 4."""
 from __future__ import division
