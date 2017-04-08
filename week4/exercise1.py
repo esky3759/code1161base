@@ -210,6 +210,7 @@ def diarist():
     countFile = open('./week4/lasers.pew', 'w')  # opens new file in write mode
     countFile.write(str(total_count))  # converts total_count to a string
     countFile.close()
+    return total_count
 
 
 if __name__ == "__main__":
