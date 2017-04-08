@@ -138,8 +138,38 @@ def wunderground():
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
+    # try:
+    #     dumped = json.dumps(obs)
+    #     mode = "w"  # from the docs
+    #     weatherData = open("obsjson", mode)
+    #     weatherData.write(dumped)
+    #     weatherData.close()
+    # except Exception as e:
+    #     print(e)
+    #     return False
+    #
+    # try:
+    #     mode = "r"  # from the docs
+    #     weatherData = open("obsjson", mode)
+    #     contents = json.load(weatherData)
+    #     weatherData.close()
+    #     keys_needed = ["state", "latitude", "longitude", "local_tz_offset"]
+    #     if all(key in contents for key in keys_needed):
+    #         state = "{state}"
+    #         latitude = "{latitude}"
+    #         longitude = "{longitude}"
+    #         local_tz_offset = "{local_tz_offset}"
+    #         print(state, latitude, longitude, local_tz_offset)
+    #     else:
+    #         print("Your dictionary is missing some keys.",
+    #               contents,
+    #               keys_needed)
+    #         return False
+    # except Exception as e:
+    #     print(e)
+    #     return False
     base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
+    api_key = "b2ef4793f9c78a7d"
     country = "AU"
     city = "Sydney"
     template = "{base}/{key}/conditions/q/{country}/{city}.json"
@@ -148,10 +178,14 @@ def wunderground():
     the_json = json.loads(r.text)
     obs = the_json['current_observation']
 
-    return {"state":           None,
-            "latitude":        None,
-            "longitude":       None,
-            "local_tz_offset": None}
+    state = obs["display_location"]["state"]
+    latitude = obs["observation_location"]["latitude"]
+    longitude = obs["observation_location"]["longitude"]
+    offset = obs["local_tz_offset"]
+    return {"state":           state,
+            "latitude":        latitude,
+            "longitude":       longitude,
+            "local_tz_offset": offset}
 
 
 def diarist():
