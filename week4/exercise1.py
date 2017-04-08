@@ -204,8 +204,8 @@ def diarist():
     data = open('./week4/Trispokedovetiles(laser).gcode').read()
     # loads file from directory and for access
     off_count = data.count('M10 P1')  # count of off command
-    on_count = data.count('M11 P1')  # count of on command
-    total_count = int(off_count) + int(on_count)  # total count of on/off
+    # on_count = data.count('M11 P1')  # count of on command
+    total_count = int(off_count)  # total count of on/off
 
     countFile = open('./week4/lasers.pew', 'w')  # opens new file in write mode
     countFile.write(str(total_count))  # converts total_count to a string
