@@ -2,8 +2,8 @@
 
 ![a photo of me](mugshot.png)
 
-NAME    :   Darrell Chan n\
-COURSE  :   Industrial Design n\
-CONTACT :   0478107779 ;) n\
+NAME    :   Darrell Chan \
+COURSE  :   Industrial Design \
+CONTACT :   0478107779 ;) 
 
 FEEL FREE TO SEND ME PULL REQUESTS
