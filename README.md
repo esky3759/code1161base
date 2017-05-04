@@ -1,5 +1,9 @@
-# CODE1161 - [your name here]
-
-You can see lots of other course related stuff [here](https://notionparallax.co.uk/CODE1161).
+# CODE1161 - [Darrell Chan]
 
 ![a photo of me](mugshot.png)
+
+NAME    :   Darrell Chan
+COURSE  :   Industrial Design
+CONTACT :   0478107779 ;)
+
+FEEL FREE TO SEND ME PULL REQUESTS
