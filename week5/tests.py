@@ -18,8 +18,8 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from codeHelpers import completion_message
 from codeHelpers import nyan_cat
 from codeHelpers import test
-from codeHelpers import flake8
-from codeHelpers import pydocstyle
+from codeHelpers import test_flake8
+from codeHelpers import test_pydocstyle
 from codeHelpers import grumpy
 
 
