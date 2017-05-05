@@ -57,7 +57,7 @@ def fizz_buzz():
             fizzBuzzList.append("Buzz")
         else:
             fizzBuzzList.append(j)
-        return (fizzBuzzList)
+    return (fizzBuzzList)
 
 
 def put_behind_bars(input_string="very naughty boy"):
