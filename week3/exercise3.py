@@ -5,8 +5,8 @@ Steps on the way to making your own guessing game.
 
 from __future__ import division
 from __future__ import print_function
-from exercise1 import not_number_rejector
-
+# from exercise1 import not_number_rejector
+# from exercise1 import super_asker
 import random
 
 
@@ -28,40 +28,45 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-    print("\nWelcome to Guessing Game")
-    lowerBound = not_number_rejector("Enter a lower bound:")
-    print("Now enter the upper bound:")
-    upperBound = not_number_rejector("Enter an upper bound:")
-    while upperBound <= lowerBound:
-        print("re-enter upper bound")
-        upperBound = not_number_rejector("Enter an upper bound:")
-    pass
-    print("then enter a number between {} and {}?".format(lowerBound,
-                                                          upperBound))
-    lowerBound = int(lowerBound)
-    upperBound = int(upperBound)
-    actualNo = random.randint(lowerBound, upperBound)
-    guessed = False
-
-    while not guessed:
+    print("\nwelcome to the guessing game!")
+    print("A number between 0 and _ ?")
+    error = True
+    while error is True:
+        lowerBound = raw_input("Enter a lower bound: ")
+        upperBound = raw_input("Enter an upper bound: ")
         try:
-            guessedNo = int(raw_input("guess a number:"))
-            print("you guessed {},".format(guessedNo),)
-            if guessedNo == actualNo:
-                print("you got it! it was {}".format(actualNo))
-                guessed = True
-            elif guessedNo < lowerBound:
-                print("out of range")
-            elif guessedNo > upperBound:
-                print("out of range")
-            elif guessedNo < actualNo:
-                print("too small, try again...")
-            else:
-                print("too big, try again...")
-        except Exception as e:
-            print("good one...that is not a number...try again".format(e))
-    return "You are a genius!"
-    pass
+            lowerBound = int(lowerBound)
+            upperBound = int(upperBound)
+            error = False
+        except Exception:
+            error = True
+    if lowerBound > upperBound:
+        tempBound = lowerBound
+        lowerBound = upperBound
+        upperBound = tempBound
+    print("OK then, a number between {} and {} ?".format(lowerBound,
+          upperBound))
+
+    actualNumber = random.randint(lowerBound, upperBound)
+
+    guessed = False
+    count = 0
+    while not guessed:
+        guessedNumber = int(raw_input("guess a number: "))
+        print("you guessed {},".format(guessedNumber),)
+        if guessedNumber == actualNumber:
+            print("you got it!! It was {}".format(actualNumber))
+            guessed = True
+        elif count == 3:
+            print("you gave up, answer was {}".format(actualNumber))
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("too small, try again ")
+            count += 1
+        else:
+            print("too big, try again   ")
+            count += 1
+    return "You got it!"
 
 
 if __name__ == "__main__":
