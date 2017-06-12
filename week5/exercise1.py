@@ -33,6 +33,7 @@ import math
 # much better job of what it's trying to do. Once you've has a little look,
 # move on, and eventually delete this function. (And this comment!)
 def do_bunch_of_bad_things():
+    """Print a starting Message."""
     print("Getting ready to start in 9")
     print("Getting ready to start in 8")
     print("Getting ready to start in 7")
@@ -62,6 +63,7 @@ def do_bunch_of_bad_things():
 # return a lit of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
+    """Simplify countdown message."""
     if start > stop:
         for i in range(start, stop):
             print (message + str(i))
@@ -81,21 +83,25 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
+    """Return hypotenuse."""
     hypotenuse = math.sqrt(base**2 + height**2)
     return hypotenuse
 
 
 def calculate_area(base, height):
+    """Return area."""
     area = (base * height) / 2
     return area
 
 
 def calculate_perimeter(base, height):
+    """Return perimeter."""
     perimeter = base + height + calculate_hypotenuse(base, height)
     return perimeter
 
 
 def calculate_aspect(base, height):
+    """Return aspect."""
     if base > height:
         return ("wide")
     elif base < height:
@@ -107,6 +113,7 @@ def calculate_aspect(base, height):
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
+    """Return a dictionary of facts."""
     return {"area": calculate_area(base, height),
             "perimeter": calculate_perimeter(base, height),
             "height": height,
@@ -133,6 +140,7 @@ def get_triangle_facts(base, height, units="mm"):
 # but with the values and shape that relate to the specific
 # triangle we care about.
 def tell_me_about_this_right_triangle(facts_dictionary):
+    """Return different facts based on different aspects."""
     tall = """
             {height}
             |
@@ -174,6 +182,7 @@ def triangle_master(base,
                     height,
                     return_diagram=False,
                     return_dictionary=False):
+    """Return all triangle facts."""
     dictionary = get_triangle_facts(base, height, units="mm")
     diagram = tell_me_about_this_right_triangle(dictionary)
     if return_diagram and return_dictionary:
@@ -187,6 +196,7 @@ def triangle_master(base,
 
 
 def wordy_pyramid():
+    """Return a pyramid list."""
     import requests
     baseURL = "http://www.setgetgo.com/randomword/get.php?len="
     pyramid_list = []
@@ -204,9 +214,12 @@ def wordy_pyramid():
 
 
 def get_a_word_of_length_n(length):
+    """Return a wordy pyramid."""
     wordy_pyramid
 
+
 def list_of_words_with_lengths(list_of_lengths):
+    """Doctring."""
 
 
 if __name__ == "__main__":

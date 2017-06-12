@@ -1,4 +1,5 @@
 """Week 3, Exercise 3.
+
 Steps on the way to making your own guessing game.
 """
 from __future__ import division
@@ -27,7 +28,6 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-
     print ("Welcome")
     while True:
         try:

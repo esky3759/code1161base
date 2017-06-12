@@ -26,31 +26,6 @@ def binary_search(low, high, actual_number):
       (You should remove them from the file, not comment them out, the
       tests aren't that smart yet.)
     """
-
-    """my_list = range(low, high)
-    hi = len(my_list)
-    lo = 0
-    found = False
-    tries = 0
-    guesses = []
-    while not found:
-        mid = int((hi + lo) // 2)
-        print (mid, my_list[mid])
-        guesses.append(my_list[mid])
-        if my_list[mid] == actual_number:
-            tries += 1
-            found = True
-        elif hi == actual_number == lo:
-            tries += 1
-            found = True
-        elif my_list[mid] > actual_number:
-            hi = mid - 1
-            tries += 1
-        else:
-            lo = mid
-            tries += 1
-    return {"guesses": guesses, "tries": tries}"""
-
     a = range(low, high)
     lo = 0
     hi = len(a) - 1
